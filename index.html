@@ -15,17 +15,23 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
     <header>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg shadow-md py-2 bg-white relative flex items-center w-full justify-between">
-            <div class="px-6 w-full flex flex-wrap items-center justify-between">
+        
+        <nav class="navbar navbar-expand-2xl shadow-md py-2 bg-white relative flex items-center w-full justify-between">
+            <!--Logo-->
+            <img class="relative w-25 h-8 p-1" src="C:\Users\kavic\Movie_search\OnlyFlix\onlyflix-low-resolution-logo-black-on-transparent-background.png" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
+            
+            <div class="px-9 w-full flex flex-wrap items-center justify-between">
                 <div class="flex items-center">
                     <button
-                        class="navbar-toggler border-0 py-3 lg:hidden leading-none text-xl bg-transparent text-gray-600 hover:text-gray-700 focus:text-gray-700 transition-shadow duration-150 ease-in-out mr-2"
+                        class=" text center navbar-toggler border-0 py-3 2xl:hidden leading-none text-xl bg-transparent text-gray-600 hover:text-gray-700 focus:text-gray-700 transition-shadow duration-150 ease-in-out mr-2"
                         type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContentY"
                         aria-controls="navbarSupportedContentY" aria-expanded="false" aria-label="Toggle navigation">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" class="w-5" role="img"
@@ -36,11 +42,18 @@
                         </svg>
                     </button>
                 </div>
-                <!-- Changed class from class="navbar-collapse collapse grow items-center" -->
+                
+                <!-- Movie search button-->
+                <button type="submit" class="inline-flex items-center py-2.5 px-9 ml-2 text-sm font-medium text-white bg-gray-400 rounded-lg border border-gray-400 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        <svg aria-hidden="true" class="w-5 h-5 mr-2 -ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>Movie Search..
+    </button>
+
+    <!-- Changed class from class="navbar-collapse collapse grow items-center" -->
                 <div class="navbar-collapse collapse grow items-center" id="navbarSupportedContentY">
-                    <ul class="navbar-nav mr-auto lg:flex lg:flex-row">
+                    
+                    <ul class="navbar-nav mr-auto 2xl:flex 2xl:flex-row">
                         <li class="nav-item">
-                            <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
+                            <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition  ease-in-out"
                                 href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Home</a>
                         </li>
                         <li class="nav-item">
@@ -60,6 +73,8 @@
             </div>
         </nav>
         <!-- Navbar -->
+        
+       
 
         <!-- Background image -->
         <div class="relative overflow-hidden bg-no-repeat bg-cover" style="
@@ -74,13 +89,14 @@
                         <h1 class="text-5xl font-bold mt-0 mb-6">OnlyFlix</h1>
                         <h3 class="text-3xl font-bold mb-8">Only top rated flix. A great movie. Every ocassion.
                             Everytime.</h3>
+
+                            
                         <button type="button"
                             class="inline-block px-6 py-2.5 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                             data-mdb-ripple="true" data-mdb-ripple-color="light">
                             Whats the ocassion?
-                        </button>
-                    </div>
-                </div>
+                        </button> 
+               
             </div>
         </div>
         <!-- Background image -->
@@ -98,14 +114,20 @@
         <main class="flex flex-col grow bg-blue-500">
 
         </main> -->
-    <footer class="flex flex-row h-20 bg-blue-300 justify-center place-items-center">
+    <!--<footer class="flex flex-row h-20 bg-blue-300 justify-center place-items-center">
         <h3 class="text-xl font-bold"> Made by Mind Benders</h3>
-    </footer>
+    </footer>-->
+
+    <footer class="bg-gray-200 text-center lg:text-left">
+        <div class="text-gray-700 text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2022 Copyright:
+          <a class="text-gray-800" href="#">Mind Benders</a>
+        </div>
+      </footer>
 
     </div>
     <!-- Jquery CDN -->
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
-        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    
     <!-- Javascript link  -->
     <script src="assets/js/script.js"></script>
     <!-- New Tailwind-Elements -->
