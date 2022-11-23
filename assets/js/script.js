@@ -1,7 +1,6 @@
 var carousel = document.getElementById('boysNight');
 var next = document.querySelector('.carousel-control-next');
 var prev = document.querySelector('.carousel-control-prev');
-var index = 0;
 var movieImage = document.querySelector('.movie');
 
 var omdbBaseUrl = 'https://www.omdbapi.com/?apikey=';
@@ -10,7 +9,7 @@ var omdbParameters = '&t={movie title}'; //search t={movie title} based on tmdb 
 
 var tmdbBaseUrl = 'https://api.themoviedb.org/3/movie/top_rated?api_key=';
 var tmdbApiKey = '884cba11f93bbe1c0a31ae85702286fa';
-var tmdbParameters = '&with_genres=28,12';
+var tmdbParameters = '&language=en_US&with_genres=28,12';
 var imagePath = 'https://image.tmdb.org/t/p/w500' //+ backdrop_path
 
 // fetchOmdbInfo();
@@ -35,13 +34,23 @@ function fetchTmdbInfo(){
 
 function displayBoysNightInfo(data){
     // document.getElementById('movieTwo').setAttribute('src', imagePath + data.results[1].poster_path)
+    var movieTitle = $('.movie');
+    //first loop create ids and divs
+    //create div for img and description
+    //description h5 and p
+    //put ids in variables
     
+        //second loop inject info into created divs
+
+
     for (var i = 0; i < data.results.length; i++){
-        var movieTitle = data.results[i].title;
-        var description = data.results[i].overview;
-        var movieImage = imagePath + data.results[i].poster_path;
-        
-        document.getElementById('movieOne').setAttribute('src', imagePath + data.results[i].poster_path);
+        var getMovieTitle = data.results[i].title;
+        var getDescription = data.results[i].overview;
+        var getMovieImage = imagePath + data.results[i].poster_path;
+
+        document.getElementById('movieOne').setAttribute('src', getMovieImage);
+        document.getElementById('movieTitle').innerHTML = getMovieTitle;
+        document.getElementById('description').innerHTML = getDescription;
 
     // }
     // var rating = data.ratings[1].value;
