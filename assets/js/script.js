@@ -6,25 +6,26 @@ var movieImage = document.querySelector('.movie');
 
 var omdbBaseUrl = 'https://www.omdbapi.com/?apikey=';
 var omdbApiKey = '8f3f0682';
-var omdbParameters = '&i=tt3896198'; //search t={movie title} based on tmdb movies
+var omdbParameters = '&t={movie title}'; //search t={movie title} based on tmdb movies
 
 var tmdbBaseUrl = 'https://api.themoviedb.org/3/movie/top_rated?api_key=';
 var tmdbApiKey = '884cba11f93bbe1c0a31ae85702286fa';
-var tmdbParameters = //top 5? limit=5; genre &with_genres=
+var tmdbParameters = '&with_genres=28,12';
+var imagePath = 'https://image.tmdb.org/t/p/w500' //+ backdrop_path
 
 // fetchOmdbInfo();
 fetchTmdbInfo();
 
 //fetch tmdb information: movie title, description
 function fetchTmdbInfo(){
-    fetch(tmdbBaseUrl + tmdbApiKey)
+    fetch(tmdbBaseUrl + tmdbApiKey + tmdbParameters)
     .then(function(response){
         if(response.ok){
             return response.json()
         }
     })
     .then(function(data){
-        console.log(data);
+        console.log(data.results.slice(0, 5));
         displayBoysNightInfo(data);
     })
     .catch(function(error){
@@ -33,13 +34,21 @@ function fetchTmdbInfo(){
 }
 
 function displayBoysNightInfo(data){
-    var movieTitle = data.results[0].title;
-    var description = data.results[0].overview;
+    // document.getElementById('movieTwo').setAttribute('src', imagePath + data.results[1].poster_path)
+    
+    for (var i = 0; i < data.results.length; i++){
+        var movieTitle = data.results[i].title;
+        var description = data.results[i].overview;
+        var movieImage = imagePath + data.results[i].poster_path;
+        
+        document.getElementById('movieOne').setAttribute('src', imagePath + data.results[i].poster_path);
+
+    // }
     // var rating = data.ratings[1].value;
     // var moviePoster = data.poster;
 
-    console.log(movieTitle, description)
-}
+    // console.log(movieTitle, description)
+}}
 
 
 //fetch omdb information: rating, poster
@@ -79,4 +88,4 @@ function displayBoysNightInfo(data){
     // next.addEventListener('click', function(e){
     //     e.stopPropagation();
     //     navigate(1);
-    // })
+    //})
