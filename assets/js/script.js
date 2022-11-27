@@ -17,6 +17,7 @@ var index = 0;
 
 fetchTmdbInfo();
 
+
 //fetch tmdb information: movie title, description
 function fetchTmdbInfo(){
     fetch(tmdbBaseUrl + tmdbApiKey + tmdbParameters)
@@ -26,9 +27,10 @@ function fetchTmdbInfo(){
         }
     })
     .then(function(data){
-
-        console.log(data.results.slice(0, 5));
-        displayBoysNightInfo(data);
+        displayBoysNightInfo(data)
+    })
+    .then(function(){
+        fetchOmdbInfo();
     })
     .catch(function(error){
         console.error(error);
@@ -39,24 +41,25 @@ function displayBoysNightInfo(data){
     var movieSlides = $('.carousel-inner');
     //first loop create class and divs (image and description-h5,p)
     for (var i = 0; i < data.results.slice(0, 5).length; i++){
-        var movieContainer = document.createElement('div');
-        movieContainer.setAttribute('class', 'carousel-item movieImage');
-        var movieImage = document.createElement('img');
-        movieImage.setAttribute('id', 'poster' + i);
-        movieImage.setAttribute('class', 'block w-1/5')
+
         var descriptionContainer = document.createElement('div');
         descriptionContainer.setAttribute('class', 'carousel-caption description');
+        var movieImage = document.createElement('img');
+        movieImage.setAttribute('class', 'ml-28 w-1/5');
+        movieImage.setAttribute('id', 'poster' + i);
         var title = document.createElement('h5');
         title.setAttribute('id', 'title' + i);
         title.setAttribute('class', 'title');
         var description = document.createElement('p');
         description.setAttribute('id', 'description' + i);
+        var rating = document.createElement('p');
+        rating.setAttribute('id', 'rating' + i);
 
-        movieSlides.append(movieContainer);
-        movieContainer.append(movieImage);
         movieSlides.append(descriptionContainer);
+        descriptionContainer.append(movieImage);
         descriptionContainer.append(title);
         descriptionContainer.append(description);
+        descriptionContainer.append(rating);
     // inject info into each element
     //rating from omdb...fetch inside? idk
         var getMovieTitle = data.results[i].title;
@@ -66,11 +69,12 @@ function displayBoysNightInfo(data){
         var pushDescription = document.getElementById('description' + i);
         var pushMovieImage = document.getElementById('poster' + i);
 
+
         pushMovieTitle.innerHTML = getMovieTitle;
         boysNightMovies.push(getMovieTitle);
-        Object.assign({}, boysNightMovies);
         pushDescription.innerHTML = getDescription;
-        pushMovieImage.setAttribute('src', getMovieImage);
+        pushMovieImage.src = getMovieImage;
+
 
             // var rating = data.ratings[1].value;
             // var moviePoster = data.poster;
@@ -79,25 +83,44 @@ function displayBoysNightInfo(data){
     }
 }
 
+
 // fetch omdb information: rating, poster
 function fetchOmdbInfo(){
-    // for (var i = 0; i < boysNightMovies.length; i++) {
-        fetch(omdbBaseUrl + omdbApiKey + omdbParameters + boysNightMovies[2])
+    for (var i = 0; i < 5; i++) {
+        var pushMovieRating = document.getElementById('rating' + i);
+
+        fetch(omdbBaseUrl + omdbApiKey + omdbParameters + boysNightMovies[i])
         .then(function(response){
             if(response.ok){
-                return response.json()
+                return response.json();
             }
         })
         .then(function(data){
-            console.log(data);
+            console.log(pushMovieRating)
+            console.log(i)
+    
+
+            if (!data.Ratings[1]){
+                var getImdbRating = data.Ratings[0].Value;
+                console.log('imdb', getImdbRating)
+                pushMovieRating.innetrHTML = getImdbRating;
+            } else {
+                var getRottenTomatoesRating = data.Ratings[1].Value;
+                console.log('rotten', getRottenTomatoesRating)
+                pushMovieRating.innerHTML = getRottenTomatoesRating;
+
+            }
+                
+
         })
         .catch(function(error){
             console.error(error);
         })
-
-    // }
+    }
 }
-fetchOmdbInfo();
+
+
+
 
 
 
