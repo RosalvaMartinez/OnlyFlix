@@ -49,7 +49,7 @@ function omdbDataFetch(movieList) {
                     //$("#rating-" + (i + 1)).text("IMDB Rating: " + data[i].Ratings[0].Value + "\nRotten Tomatoes Rating: " + data[i].Ratings[1].Value)
                 } else {
                     //if there are no ratings, inject the text "N/A"
-                    $("#rating-" + (i + 1)).text("N/A")
+                    $("#rating-" + (i + 1)).text("Rating: N/A")
                 }
             }
         })
