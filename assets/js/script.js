@@ -140,28 +140,38 @@ var boysNightCarousel = document.getElementById('boysNight');
 var apeMonkey = "a4e2430bc83be09ef62dea94f12d573b";
 var boysNightGenres = "28,12";
 var boysNightMovies = [];
+var pushBoyMovieRating = $('#boyMovieRating1',);
+    // '#boyMovieRating2',
+    // '#boyMovieRating3',
+    // '#boyMovieRating4',
+    // '#boyMovieRating5',
+    // '#boyMovieRating6',
+    // '#boyMovieRating7',
+    // '#boyMovieRating8',
+    // '#boyMovieRating9',
+    // '#boyMovieRating10'
 
 
-boysNightTmdbInfo();
 //fetch top 10 boys night movies
-function boysNightTmdbInfo(){
-    fetch(tmdburl + boysNightGenres)
-    .then(function(response) {
-        if(response.ok){
-        return response.json()
-        }
-    })
-    .then(function(data){
+const boysNightTmdbInfo = async () =>{
+    try {
+        const res = await fetch(tmdburl + boysNightGenres);
+        console.log(res.ok);
+        const data = await res.json();
+        console.log(data.results.slice(0,10));
         displayBoysNight(data);
         fetchBoysOmdbInfo();
-    })
+    }catch(err) {
+        console.error(err);
+    }
 }
+boysNightTmdbInfo();
 //display your genre information into carousel
  //CHANGE TO YOUR GENRE
  //for loop????
 function displayBoysNight(data) {
 //loop through data results to put title, overview, and poster photo into html
-    for (var i = 1; i < data.results.slice(0,10).length; i++) {
+    for (var i = 1; i < data.results.slice(0,11).length; i++) {
         var getMovieTitle = data.results[i].title;
         var getDescription = data.results[i].overview;
         var getMovieImage = image + data.results[i].poster_path;
@@ -172,7 +182,7 @@ function displayBoysNight(data) {
         pushMovieTitle.innerHTML = getMovieTitle;
         pushMovieTitle.setAttribute('class', 'text-xl');
         boysNightMovies.push(getMovieTitle);
-        pushDescription.innerHTML = getDescription;
+        pushDescription.innerHTML = 'Overview: ' + getDescription;
         pushMovieImage.src = getMovieImage;
     }
 }
@@ -200,28 +210,51 @@ var omdbApiKey = '8f3f0682';
 var omdbParameters = '&t=';
 
 // fetch omdb information: rating, poster
-function fetchBoysOmdbInfo(){
-    for (var i = 0; i < boysNightMovies.length; i++) {
-        var pushMovieRating = document.getElementById('boyMovieRating' + i + 1);
-
-        fetch(omdbBaseUrl + omdbApiKey + omdbParameters + boysNightMovies[i])
-        .then(function(response){
-            if(response.ok){
-                return response.json();
-            }
-        })
-        .then(function(data){
-            console.log(data.Ratings[0].Value)
-            var getImdbRating = data.Ratings[0].Value;
-            pushMovieRating.innerHTML = 'IMDB Rating: ' + getImdbRating;
-            
-        })
-        .catch(function(error){
-            console.error(error);
-        })
+const fetchBoysOmdbInfo = async () =>{
+    try{
+        const results = await Promise.all([
+            fetch(omdbBaseUrl + omdbApiKey + omdbParameters + boysNightMovies[0]),
+            fetch(omdbBaseUrl + omdbApiKey + omdbParameters + boysNightMovies[1]),
+            fetch(omdbBaseUrl + omdbApiKey + omdbParameters + boysNightMovies[2]),
+            fetch(omdbBaseUrl + omdbApiKey + omdbParameters + boysNightMovies[3]),
+            fetch(omdbBaseUrl + omdbApiKey + omdbParameters + boysNightMovies[4]),
+            fetch(omdbBaseUrl + omdbApiKey + omdbParameters + boysNightMovies[5]),
+            fetch(omdbBaseUrl + omdbApiKey + omdbParameters + boysNightMovies[6]),
+            fetch(omdbBaseUrl + omdbApiKey + omdbParameters + boysNightMovies[7]),
+            fetch(omdbBaseUrl + omdbApiKey + omdbParameters + boysNightMovies[8]),
+            fetch(omdbBaseUrl + omdbApiKey + omdbParameters + boysNightMovies[9]),
+        ])
+        const finalData = await Promise.all(results.map(result => result.json()));
+        console.log(finalData);
+        displayBoysRatings(finalData);
+        return finalData;
+    } catch(err){
+        console.error(err);
     }
 }
 
+var boyMovieRatings = [];
+
+function displayBoysRatings(finalData){
+    for (i = 0; i < boysNightMovies.length; i++){
+        var getBoyMovieRating = finalData[i].Ratings;
+        boyMovieRatings.push(getBoyMovieRating);
+        if (finalData.Response === undefined){
+            console.log('rating:n/a')
+            // pushBoyMovieRating[i].innerHTML = 'Rating: N/A';
+        }else{
+            // pushBoyMovieRating.innerHTML = getBoyMovieRating[i];
+        }
+    }
+    
+    for(j = 0; j < boyMovieRatings.length; j++){
+        pushBoyMovieRating.innerHTML = boyMovieRatings[j]
+        console.log(boyMovieRatings)
+    }
+}
+    
+
+// }
 
 
 // Promise.all([boysNightTmdbInfo, fetchBoysOmdbInfo])
