@@ -116,9 +116,7 @@
         <main class="flex flex-col grow bg-blue-500">
 
         </main> -->
-    <!--<footer class="flex flex-row h-20 bg-blue-300 justify-center place-items-center">
-        <h3 class="text-xl font-bold"> Made by Mind Benders</h3>
-    </footer>-->
+    
 
 <div>
   <h1>Girls Night</h1>
@@ -126,110 +124,160 @@
 <!--carosuel-->
 
 <section>
-    <div class="flex">
-        <div class="w-2/12 flex items-center " >
-            <div class="w-full text-right ">
-                <button onclick="prev()" class="p-3 rounded-full bg-white border border-gray-100 shadow-lg mr-5"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+    <div class="flex ">
+        <div class="w-1/12 flex items-center " >
+            <div class="w-full text-right">
+                <button onclick="prev()" class="p-2 rounded-full bg-white border border-gray-100 shadow-lg mr-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
                   </svg>
-                  
                   </button>
             </div>
         </div>
 
-        <div class="w-full border border-red-500">
-<div id="sliderContainer" class="w-10/12">
-    <div id="slider" class="flex w-full">
-        <!--movie 1-->
-        <div class="p-5"> 
-<div class="border rounded-lg p-5 h-full">
-    <img class="h-50 w-full object-cover rounded-md" src="" id="girlmoviepic1" alt="movie1">
-<div>
-<h5 class="mt-2 text-2xl font-medium" id="girlmovietitle1"></h5></div>
- <p id="girlmovieoverview1">
-    overView
-</p> 
-<p id="girlmovierating1">IMDB Rating:</p>
-</div>
+<div id="sliderContainer" class="w-10/12 overflow-hidden">
+<ul id="slider"class="flex w-full">
 
-        </div>
-<!--movie 2-->
-<div class="p-5">
+        <!--movie 1-->
+<li class=" p-3"> 
     <div class="border rounded-lg p-5 h-full">
-        <img class="h-50 w-full object-cover rounded-md" src="" id="girlmoviepic2" alt="movie1">
-    <div>
-    <h5 class="mt-2 text-2xl font-medium" id="girlmovietitle2"></h5></div>
-     <p id="girlmovieoverview2">
-        overView
-    </p> 
-    <p id="girlmovierating2">IMDB Rating:</p>
-    </div>
+    <img class="rounded-md" src="" id="girlmoviepic1" alt="movie1">
+    <h5 class="mt-2 text-2xl font-medium" id="girlmovietitle1"></h5>
+    <p class="font-light" id="girlmovieoverview1"></p>  
+    <p id="girlmovierating1">Internet Movie Database:</p>
+    <p id="girlmovieratingRT1">Rotten Tomatoes:</p>
+    <p id="girlmovieratingM1">Metacritic:</p>
+</div>
+</li>
     
-            </div>
+<!--movie 2-->
+<li class=" p-3">
+    <div class="border rounded-lg p-5 h-full">
+        <img class="rounded-md" src="" id="girlmoviepic2" alt="movie2">
+        <h5 class=" font-bold mt-2" id="girlmovietitle2"></h5>
+        <p class="font-light" id="girlmovieoverview2"></p> 
+        <p id="girlmovierating2">Internet Movie Database:</p>
+        <p id="girlmovieratingRT2">Rotten Tomatoes:</p>
+        <p id="girlmovieratingM2">Metacritic:</p>
+    </div>
+</li>
 
 <!--movie 3-->
-<div class="p-5">
+<li class=" p-3">
     <div class="border rounded-lg p-5 h-full">
-        <img class="h-50 w-full object-cover rounded-md" src="" id="girlmoviepic3" alt="movie1">
-    <div>
-    <h5 class="mt-2 text-2xl font-medium" id="girlmovietitle3"></h5></div>
-     <p id="girlmovieoverview3">
-        overView
-    </p> 
-    <p id="girlmovierating3">IMDB Rating:</p>
+        <img class="rounded-md" src="" id="girlmoviepic3" alt="movie3">
+        <h5 class="mt-2 text-2xl font-medium" id="girlmovietitle3"></h5>
+        <p class="font-light" id="girlmovieoverview3"></p> 
+        <p id="girlmovierating3">Internet Movie Database:</p>
+        <p id="girlmovieratingRT3">Rotten Tomatoes:</p>
+        <p id="girlmovieratingM3">Metacritic:</p>
     </div>
     
-            </div>
+</li>
 
 <!--movie 4-->
 
-<div class="p-5">
+<li class=" p-3">
     <div class="border rounded-lg p-5 h-full">
-        <img class="h-50 w-full object-cover rounded-md" src="" id="girlmoviepic4" alt="movie1">
-    <div>
-    <h5 class="mt-2 text-2xl font-medium" id="girlmovietitle4"></h5></div>
-     <p id="girlmovieoverview4">
-        overView
-    </p> 
-    <p id="girlmovierating4">IMDB Rating:</p>
+        <img class="rounded-md" src="" id="girlmoviepic4" alt="movie1">
+        <h5 class="mt-2 text-2xl font-medium" id="girlmovietitle4"></h5>
+        <p class="font-light" id="girlmovieoverview4"></p> 
+        <p id="girlmovierating4">Internet Movie Database:</p>
+        <p id="girlmovieratingRT4">Rotten Tomatoes:</p>
+        <p id="girlmovieratingM4">Metacritic:</p>
     </div>
-    
-            </div>
+</li>
 
 <!--movie 5-->
-<div class="p-5 m -3">
+<li class="p-3 ">
     <div class="border rounded-lg p-5 h-full">
-        <img class="h-50 w-full object-cover rounded-md" src="" id="girlmoviepic5" alt="movie1">
-    <div>
-    <h5 class="mt-2 text-2xl font-medium" id="girlmovietitle5"></h5></div>
-    <div> <p id="girlmovieoverview5"></div>
-        overView
-    </p> 
-    <p id="girlmovierating5">IMDB Rating:</p>
+        <img class="rounded-md" src="" id="girlmoviepic5" alt="movie1">
+        <h5 class="mt-2 text-2xl font-medium" id="girlmovietitle5"></h5>
+        <p class="font-light" id="girlmovieoverview5"></p> 
+        <p id="girlmovierating5">Internet Movie Database:</p>
+        <p id="girlmovieratingRT5">Rotten Tomatoes:</p>
+        <p id="girlmovieratingM5">Metacritic:</p>
     </div>
     
-            </div>
+</li>
 
-
+<!--movie 6-->
+<li class=" p-3">
+    <div class="border rounded-lg p-5 h-full">
+        <img class="rounded-md" src="" id="girlmoviepic6" alt="movie1">
+        <h5 class="mt-2 text-2xl font-medium" id="girlmovietitle6"></h5>
+        <p class="font-light" id="girlmovieoverview6"></p> 
+        <p id="girlmovierating6">Internet Movie Database:</p>
+        <p id="girlmovieratingRT6">Rotten Tomatoes:</p>
+        <p id="girlmovieratingM6">Metacritic:</p>
     </div>
-</div>
+    
+</li>
 
-        </div>
+<!--movie 7-->
+<li class=" p-3 ">
+    <div class="border rounded-lg p-5 h-full">
+        <img class="rounded-md" src="" id="girlmoviepic7" alt="movie1">
+        <h5 class="mt-2 text-2xl font-medium" id="girlmovietitle7"></h5>
+        <p class="font-light" id="girlmovieoverview7"></p> 
+        <p id="girlmovierating7">Internet Movie Database:</p>
+        <p id="girlmovieratingRT7">Rotten Tomatoes:</p>
+        <p id="girlmovieratingM7">Metacritic:</p>
+    </div>
+    
+</li>
 
+<!--movie 8-->
+<li class=" p-3">
+    <div class="border rounded-lg p-5 h-full">
+        <img class="rounded-md" src="" id="girlmoviepic8" alt="movie1">
+        <h5 class="mt-2 text-2xl font-medium" id="girlmovietitle8"></h5>
+        <p class="font-light" id="girlmovieoverview8"></p> 
+        <p id="girlmovierating8">Internet Movie Database:</p>
+        <p id="girlmovieratingRT8">Rotten Tomatoes:</p>
+        <p id="girlmovieratingM8">Metacritic:</p>
+    </div>
+    
+</li>
 
+<!--movie 9-->
+<li class=" p-3">
+    <div class="border rounded-lg p-5 h-full">
+        <img class="rounded-md" src="" id="girlmoviepic9" alt="movie1">
+        <h5 class="mt-2 text-2xl font-medium" id="girlmovietitle9"></h5>
+        <p class="font-light" id="girlmovieoverview9"></p> 
+        <p id="girlmovierating9">Internet Movie Database:</p>
+        <p id="girlmovieratingRT9">Rotten Tomatoes:</p>
+        <p id="girlmovieratingM9">Metacritic:</p>
+    </div>
+    
+</li>
 
+<!--movie 10-->
+<li class=" p-3">
+    <div class="border rounded-lg p-5 h-full">
+        <img class="rounded-md" src="" id="girlmoviepic10" alt="movie1">
+        <h5 class="mt-2 text-2xl font-medium" id="girlmovietitle10"></h5>
+        <p class="font-light" id="girlmovieoverview10"></p> 
+        <p id="girlmovierating10">Internet Movie Database:</p>
+        <p id="girlmovieratingRT10">Rotten Tomatoes:</p>
+        <p id="girlmovieratingM10">Metacritic:</p>
+    </div> 
+</li>
+</ul>
+</div>  
 <!--Right arrow-->
-        <div class="w-2/12 flex items-center">
-            <div class="w-full ">
-                <button onclick="next()" class="p-3 rounded-full bg-white border border-gray-100 shadow-lg ml-5"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <div class="w-1/12 flex items-center">
+            <div class="w-full text-left">
+                <button onclick="next()" class="p-2 rounded-full bg-white border border-gray-100 shadow-lg ml-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
                   </svg>
                   
                   </button>
             </div>
         </div>
-
-    </div>
+    </div> 
 </section>
 
 <div>
