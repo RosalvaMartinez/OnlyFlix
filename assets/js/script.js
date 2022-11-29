@@ -63,7 +63,6 @@ function OmdbinfoMovie1(){
 })
 
 .then(function(data1){
-   console.log(data1);  
    displaygirlsnightomdb(data1);
 })
 
@@ -80,7 +79,6 @@ function OmdbinfoMovie2(){
 })
 
 .then(function(data2){
-   console.log(data2);  
    displaygirlsnightomdb(data2);
 })
 
@@ -97,7 +95,6 @@ function OmdbinfoMovie3(){
 })
 
 .then(function(data3){
-   console.log(data3);  
    displaygirlsnightomdb(data3);
 })
 
@@ -114,7 +111,6 @@ function OmdbinfoMovie4(){
 })
 
 .then(function(data4){
-   console.log(data4);  
    displaygirlsnightomdb(data4);
 })
 
@@ -131,7 +127,6 @@ function OmdbinfoMovie5(){
 })
 
 .then(function(data5){
-   console.log(data5);  
    displaygirlsnightomdb(data5);
 })
 
@@ -140,18 +135,237 @@ function displaygirlsnightomdb(data5){
  }  
 }
 
-//*******BOYS NIGHT */
-//change to your genre codes
-var carouselname = document.getElementById('girlsnight');
-var apikey = "a4e2430bc83be09ef62dea94f12d573b";
+//*******BOYS NIGHT--Jess' part /
+var boysNightCarousel = document.getElementById('boysNight');
+var apeMonkey = "a4e2430bc83be09ef62dea94f12d573b";
+var boysNightGenres = "28,12";
+var boysNightMovies = [];
 
-var tmdburl = "https://api.themoviedb.org/3/movie/top_rated?api_key=a4e2430bc83be09ef62dea94f12d573b&page=2&with_genres=35,10749";
-var image = "https://image.tmdb.org/t/p/w185";
+//change to your genre function name
+boysNightTmdbInfo();
+//fetch girls night top 10 movies--CHANGE TO YOUR GENRE
+ function boysNightTmdbInfo(){
+   fetch(tmdburl + boysNightGenres)
+   .then(function(response) {
+      if(response.ok){
+         return response.json()
+      }
+   })
+.then(function(data){
+   console.log(data.results.slice(0,11));
+  
+   displayboysnight(data);
+  
+}) }
+//display your genre information into carousel
+ //CHANGE TO YOUR GENRE
+function displayboysnight(data) {
+    var boyMovieRatings = ['boyMovieRating1', 'boyMovieRating2','boyMovieRating3','boyMovieRating4','boyMovieRating5','boyMovieRating6','boyMovieRating7','boyMovieRating8','boyMovieRating9','boyMovieRating10'
+]
 
+   var boymoviepicIds = ["boyMoviePic1","boyMoviePic2","boyMoviePic3","boyMoviePic4","boyMoviePic5","boyMoviePic6","boyMoviePic7","boyMoviePic8","boyMoviePic9","boyMoviePic10"];
+   var boymovietitleIds = ["boyMovieTitle1","boyMovieTitle2","boyMovieTitle3","boyMovieTitle4","boyMovieTitle5","boyMovieTitle6","boyMovieTitle7","boyMovieTitle8","boyMovieTitle9","boyMovieTitle10"];
+   var boymovieoverviewIds = ["boyMovieOverview1","boyMovieOverview2","boyMovieOverview3","boyMovieOverview4","boyMovieOverview5","boyMovieOverview6","boyMovieOverview7","boyMovieOverview8","boyMovieOverview9","boyMovieOverview10"];
+   var boymoviepicList = 0,boymovietitleList = 0,boymovieoverviewList = 0;
+ 
+   boymoviepicIds.forEach(function(picid){
+      document.getElementById(picid).setAttribute('src',image + data.results[boymoviepicList].poster_path);
+      boymoviepicList++;
+   })
 
-function displaygirlsnightomdb(data5){
-   document.getElementById('girlmovierating5').innerHTML += `<p id=""> ${data5.imdbRating} </p>`; 
- }  
+   boymovietitleIds.forEach(function(titleid){
+      document.getElementById(titleid).innerHTML += `<h5 class="text-xl" id=""> ${data.results[boymovietitleList].title}</h5> `;
+      boymovietitleList++;
+   }) 
+   
+   boymovieoverviewIds.forEach(function(overviewid){
+      document.getElementById(overviewid).innerHTML += `<p id=""> ${data.results[boymovieoverviewList].overview} </p>`;
+      boymovieoverviewList++;
+   })}
+
+//gets ratings from omdb
+var OMDBkey = "b88cdd94";
+var OMDBkeyurl = "http://www.omdbapi.com/?apikey=b88cdd94";
+
+//CHANGE TO YOUR GENRE MOVIES
+//BOYS NIGHT MOVIE1
+//lord of the rings: return of the king
+var boymovie1url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt0167260";
+boysOmdbinfoMovie1();
+function boysOmdbinfoMovie1(){   
+    fetch(boymovie1url).then(function(response) {if(response.ok){return response.json()}
+})
+
+.then(function(data1){
+    console.log(data1);
+    displayboysnightomdb(data1);
+})
+
+function displayboysnightomdb(data1){
+    document.getElementById('boyMovieRating1').innerHTML += `<p id=""> ${data1.imdbRating} </p>`;
+} 
+}
+
+// //BOYS NIGHT MOVIE2
+//primal
+var boymovie2url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt11191124";
+boysOmdbinfoMovie2();
+function boysOmdbinfoMovie2(){   
+    fetch(boymovie2url).then(function(response) {if(response.ok){return response.json()}
+})
+
+.then(function(data2){
+    console.log(data2);  
+    displayboysnightomdb(data2);
+})
+
+function displayboysnightomdb(data2){
+    document.getElementById('boyMovieRating2').innerHTML += `<p id=""> ${data2.imdbRating} </p>`; 
+}  
+}
+
+// //BOYS NIGHT MOVIE3
+//into the spiderverse
+var boymovie3url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt4633694";
+boyOmdbinfoMovie3();
+function boyOmdbinfoMovie3(){   
+    fetch(boymovie3url).then(function(response) {if(response.ok){return response.json()}
+})
+
+.then(function(data3){
+    console.log(data3);  
+    displayboysnightomdb(data3);
+})
+
+function displayboysnightomdb(data3){
+    document.getElementById('boyMovieRating3').innerHTML += `<p id=""> ${data3.imdbRating} </p>`; 
+}  
+}
+
+// //BOYS NIGHT MOVIE4
+//empire strikes back
+var boymovie4url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt0080684";
+boyOmdbinfoMovie4();
+function boyOmdbinfoMovie4(){   
+    fetch(boymovie4url).then(function(response) {if(response.ok){return response.json()}
+})
+
+.then(function(data4){
+    console.log(data4);  
+    displayboysnightomdb(data4);
+})
+
+function displayboysnightomdb(data4){
+    document.getElementById('boyMovieRating4').innerHTML += `<p id=""> ${data4.imdbRating} </p>`; 
+}  
+}
+
+// //BOYS NIGHT MOVIE5
+//fellowship of the ring
+var boymovie5url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt0120737";
+boyOmdbinfoMovie5();
+function boyOmdbinfoMovie5(){   
+    fetch(boymovie5url).then(function(response) {if(response.ok){return response.json()}
+})
+
+.then(function(data5){
+    console.log(data5);  
+    displayboysnightomdb(data5);
+})
+
+function displayboysnightomdb(data5){
+    document.getElementById('boyMovieRating5').innerHTML += `<p id=""> ${data5.imdbRating} </p>`; 
+}  
+}
+
+// //BOYS NIGHT MOVIE6
+//green snake
+var boymovie6url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt15000314";
+boyOmdbinfoMovie6();
+function boyOmdbinfoMovie6(){   
+    fetch(boymovie6url).then(function(response) {if(response.ok){return response.json()}
+})
+
+.then(function(data6){
+    console.log(data6);  
+    displayboysnightomdb(data6);
+})
+
+function displayboysnightomdb(data6){
+    document.getElementById('boyMovieRating6').innerHTML += `<p id=""> ${data6.imdbRating} </p>`; 
+}  
+}
+
+// //BOYS NIGHT MOVIE7
+//two towers
+var boymovie7url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt0167261";
+boyOmdbinfoMovie7();
+function boyOmdbinfoMovie7(){   
+    fetch(boymovie7url).then(function(response) {if(response.ok){return response.json()}
+})
+
+.then(function(data7){
+    console.log(data7);  
+    displayboysnightomdb(data7);
+})
+
+function displayboysnightomdb(data7){
+    document.getElementById('boyMovieRating7').innerHTML += `<p id=""> ${data7.imdbRating} </p>`; 
+}  
+}
+
+// //BOYS NIGHT MOVIE8
+//inception
+var boymovie8url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt1375666";
+boyOmdbinfoMovie8();
+function boyOmdbinfoMovie8(){   
+    fetch(boymovie8url).then(function(response) {if(response.ok){return response.json()}
+})
+
+.then(function(data8){
+    console.log(data8);  
+    displayboysnightomdb(data8);
+})
+
+function displayboysnightomdb(data8){
+    document.getElementById('boyMovieRating8').innerHTML += `<p id=""> ${data8.imdbRating} </p>`; 
+}  
+}
+
+// //BOYS NIGHT MOVIE9
+//demon slayer
+var boymovie9url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt11032374";
+boyOmdbinfoMovie9();
+function boyOmdbinfoMovie9(){   
+    fetch(boymovie9url).then(function(response) {if(response.ok){return response.json()}
+})
+
+.then(function(data9){
+    console.log(data9);  
+    displayboysnightomdb(data9);
+})
+
+function displayboysnightomdb(data9){
+    document.getElementById('boyMovieRating9').innerHTML += `<p id=""> ${data9.imdbRating} </p>`; 
+}  
+}
+
+// //BOYS NIGHT MOVIE10
+//endgame
+var boymovie10url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt4154796";
+boyOmdbinfoMovie10();
+function boyOmdbinfoMovie10(){   
+    fetch(boymovie10url).then(function(response) {if(response.ok){return response.json()}
+})
+
+.then(function(data10){
+    console.log(data10);  
+    displayboysnightomdb(data10);
+})
+
+function displayboysnightomdb(data10){
+    document.getElementById('boyMovieRating10').innerHTML += `<p id=""> ${data10.imdbRating} </p>`; 
+}  
 }
 
 //*******FAMILY NIGHT */
@@ -221,7 +435,6 @@ function OmdbinfoMovie1(){
 })
 
 .then(function(data1){
-   console.log(data1);  
    displaygirlsnightomdb(data1);
 })
 
@@ -238,7 +451,6 @@ function OmdbinfoMovie2(){
 })
 
 .then(function(data2){
-   console.log(data2);  
    displaygirlsnightomdb(data2);
 })
 
@@ -255,7 +467,6 @@ function OmdbinfoMovie3(){
 })
 
 .then(function(data3){
-   console.log(data3);  
    displaygirlsnightomdb(data3);
 })
 
@@ -272,7 +483,6 @@ function OmdbinfoMovie4(){
 })
 
 .then(function(data4){
-   console.log(data4);  
    displaygirlsnightomdb(data4);
 })
 
@@ -289,7 +499,6 @@ function OmdbinfoMovie5(){
 })
 
 .then(function(data5){
-   console.log(data5);  
    displaygirlsnightomdb(data5);
 })
 
@@ -326,7 +535,6 @@ function OmdbinfoMovie1(){
 })
 
 .then(function(data1){
-   console.log(data1);  
    displaygirlsnightomdb(data1);
 })
 
@@ -345,7 +553,6 @@ function OmdbinfoMovie2(){
 })
 
 .then(function(data2){
-   console.log(data2);  
    displaygirlsnightomdb(data2);
 })
 
@@ -364,7 +571,6 @@ function OmdbinfoMovie3(){
 })
 
 .then(function(data3){
-   console.log(data3);  
    displaygirlsnightomdb(data3);
 })
 
@@ -383,7 +589,6 @@ function OmdbinfoMovie4(){
 })
 
 .then(function(data4){
-   console.log(data4);  
    displaygirlsnightomdb(data4);
 })
 
@@ -402,7 +607,6 @@ function OmdbinfoMovie5(){
 })
 
 .then(function(data5){
-   console.log(data5);  
    displaygirlsnightomdb(data5);
 })
 
