@@ -482,7 +482,7 @@ var OMDBkeyurl = "http://www.omdbapi.com/?apikey=b88cdd94";
 //var movieidurl = "https://www.omdbapi.com/?apikey=b88cdd94&i="+movieids;
 //CHANGE TO YOUR GENRE MOVIES
 //SPOOKY NIGHT MOVIE1
-var spookymovie1url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt0112870";
+var spookymovie1url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt0054215";
  OmdbinfoSpookyMovie1();
 function OmdbinfoSpookyMovie1(){   
    fetch(spookymovie1url).then(function(response) {if(response.ok){return response.json()}
@@ -499,7 +499,7 @@ function OmdbinfoSpookyMovie1(){
 }
 
 //SPOOKY NIGHT MOVIE2
-var spookymovie2url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt0109830";
+var spookymovie2url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt0081505";
 OmdbinfoSpookyMovie2();
 function OmdbinfoSpookyMovie2(){   
    fetch(spookymovie2url).then(function(response) {if(response.ok){return response.json()}
@@ -516,7 +516,7 @@ function displayspookynightomdb(data2){
 }
 
 //SPOOKY NIGHT MOVIE3
-var spookymovie3url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt13535456";
+var spookymovie3url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt2396396";
 OmdbinfoSpookyMovie3();
 function OmdbinfoSpookyMovie3(){   
    fetch(spookymovie3url).then(function(response) {if(response.ok){return response.json()}
@@ -533,7 +533,7 @@ function displaySpookynightomdb(data3){
 }
 
 //SPOOKY NIGHT MOVIE4
-var spookymovie4url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt0033045";
+var spookymovie4url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt4620956";
 OmdbinfoSpookyMovie4();
 function OmdbinfoSpookyMovie4(){   
    fetch(spookymovie4url).then(function(response) {if(response.ok){return response.json()}
@@ -550,7 +550,7 @@ function displaySpookynightomdb(data4){
 }
 
 //SPOOKY NIGHT MOVIE5
-var spookymovie5url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt0021749";
+var spookymovie5url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt0078748";
 OmdbinfoSpookyMovie5();
 function OmdbinfoSpookyMovie5(){   
    fetch(spookymovie5url).then(function(response) {if(response.ok){return response.json()}
@@ -567,7 +567,7 @@ function displaySpookynightomdb(data5){
 }
 
 //SPOOKY NIGHT MOVIE6
-var spookymovie6url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt0112870";
+var spookymovie6url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt8594324";
  OmdbinfoSpookyMovie6();
 function OmdbinfoSpookyMovie6(){   
    fetch(spookymovie6url).then(function(response) {if(response.ok){return response.json()}
@@ -584,7 +584,7 @@ function OmdbinfoSpookyMovie6(){
 }
 
 //SPOOKY NIGHT MOVIE7
-var spookymovie7url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt0109830";
+var spookymovie7url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt8594324";
 OmdbinfoSpookyMovie7();
 function OmdbinfoSpookyMovie7(){   
    fetch(spookymovie7url).then(function(response) {if(response.ok){return response.json()}
@@ -601,7 +601,7 @@ function displayspookynightomdb(data7){
 }
 
 //SPOOKY NIGHT MOVIE8
-var spookymovie8url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt13535456";
+var spookymovie8url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt0010323";
 OmdbinfoSpookyMovie8();
 function OmdbinfoSpookyMovie8(){   
    fetch(spookymovie8url).then(function(response) {if(response.ok){return response.json()}
@@ -618,7 +618,7 @@ function displaySpookynightomdb(data8){
 }
 
 //SPOOKY NIGHT MOVIE9
-var spookymovie9url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt0033045";
+var spookymovie9url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt0056687";
 OmdbinfoSpookyMovie9();
 function OmdbinfoSpookyMovie9(){   
    fetch(spookymovie9url).then(function(response) {if(response.ok){return response.json()}
@@ -635,7 +635,7 @@ function displaySpookynightomdb(data9){
 }
 
 //SPOOKY NIGHT MOVIE10
-var spookymovie10url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt0021749";
+var spookymovie10url =  "https://www.omdbapi.com/?apikey=b88cdd94&i=tt0016847";
 OmdbinfoSpookyMovie10();
 function OmdbinfoSpookyMovie10(){   
    fetch(spookymovie10url).then(function(response) {if(response.ok){return response.json()}
