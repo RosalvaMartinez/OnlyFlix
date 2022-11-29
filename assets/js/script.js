@@ -135,7 +135,6 @@ function displaygirlsnightomdb(data5){
  }  
 }
 
-<<<<<<< HEAD
 //*******BOYS NIGHT--Jess' part /
 var boysNightCarousel = document.getElementById('boysNight');
 var apeMonkey = "a4e2430bc83be09ef62dea94f12d573b";
@@ -273,16 +272,6 @@ function boyOmdbinfoMovie5(){
     console.log(data5);  
     displayboysnightomdb(data5);
 })
-=======
-//*******BOYS NIGHT */
-//change to your genre codes
-var carouselname = document.getElementById('girlsnight');
-var apikey = "a4e2430bc83be09ef62dea94f12d573b";
-
-var tmdburl = "https://api.themoviedb.org/3/movie/top_rated?api_key=a4e2430bc83be09ef62dea94f12d573b&page=2&with_genres=35,10749";
-var image = "https://image.tmdb.org/t/p/w185";
-
->>>>>>> main
 
 function displayboysnightomdb(data5){
     document.getElementById('boyMovieRating5').innerHTML += `<p id=""> ${data5.imdbRating} </p>`; 
