@@ -393,6 +393,7 @@ function showMovies(data) {
   };
 }
 
+
 //gets ratings from omdb
 
 
@@ -403,7 +404,7 @@ function showMovies(data) {
   
    movieidurl = "https://www.omdbapi.com/?apikey=e6c5307a&i="+famMovieIds;
   //CHANGE TO YOUR GENRE MOVIES
-  //GIRLS NIGHT MOVIE1
+  //FAMILY MOVIE1
   var famMovie1url = "https://www.omdbapi.com/?apikey=e6c5307a&i=tt10032342";
   OmdbinfoMovie1();
   function OmdbinfoMovie1() {
@@ -421,7 +422,7 @@ function showMovies(data) {
     }
   }
   
-  //GIRLS NIGHT MOVIE2
+  //FAMILY MOVIE2
   var famMovie2url = "https://www.omdbapi.com/?apikey=e6c5307a&i=tt0245429";
   OmdbinfoMovie2();
   function OmdbinfoMovie2() {
@@ -439,7 +440,7 @@ function showMovies(data) {
     }
   }
   
-  //GIRLS NIGHT MOVIE3
+  //FAMILY MOVIE3
   var famMovie3url = "https://www.omdbapi.com/?apikey=e6c5307a&i=tt3153634";
   OmdbinfoMovie3();
   function OmdbinfoMovie3() {
@@ -457,7 +458,7 @@ function showMovies(data) {
     }
   }
   
-  //GIRLS NIGHT MOVIE4
+  //FAMILY MOVIE4
   var famMovie4url = "https://www.omdbapi.com/?apikey=e6c5307a&i=tt5198068";
   OmdbinfoMovie4();
   function OmdbinfoMovie4() {
@@ -475,7 +476,7 @@ function showMovies(data) {
     }
   }
   
-  //GIRLS NIGHT MOVIE5
+  //FAMILY MOVIE5
   var famMovie5url = "https://www.omdbapi.com/?apikey=e6c5307a&i=tt3061046";
   OmdbinfoMovie5();
   function OmdbinfoMovie5() {
@@ -492,7 +493,7 @@ function showMovies(data) {
       document.getElementById('fammovierating5').innerHTML += `<p id=""> ${data5.imdbRating} </p>`;
     }
   }
-  //GIRLS NIGHT MOVIE6
+  //FAMILY MOVIE6
   var famMovie6url = "https://www.omdbapi.com/?apikey=e6c5307a&i=tt0038650";
   OmdbinfoMovie6();
   function OmdbinfoMovie6() {
@@ -509,7 +510,7 @@ function showMovies(data) {
       document.getElementById('fammovierating6').innerHTML += `<p id=""> ${data6.imdbRating} </p>`;
     }
   }
-//GIRLS NIGHT MOVIE7
+//FAMILY MOVIE7
 var famMovie7url = "https://www.omdbapi.com/?apikey=e6c5307a&i=tt4729430";
 OmdbinfoMovie7();
 function OmdbinfoMovie7() {
@@ -527,7 +528,7 @@ function OmdbinfoMovie7() {
   }
 }
 
-//GIRLS NIGHT MOVIE8
+//FAMILY MOVIE8
 var famMovie8url = "https://www.omdbapi.com/?apikey=e6c5307a&i=tt0038650";
 OmdbinfoMovie8();
 function OmdbinfoMovie8() {
@@ -545,7 +546,7 @@ function OmdbinfoMovie8() {
   }
 }
 
-//GIRLS NIGHT MOVIE9
+//FAMILY MOVIE9
 var famMovie9url = "https://www.omdbapi.com/?apikey=e6c5307a&i=tt2140203";
 OmdbinfoMovie9();
 function OmdbinfoMovie9() {
@@ -563,7 +564,7 @@ function OmdbinfoMovie9() {
   }
 }
 
-//GIRLS NIGHT MOVIE10
+//FAMILY MOVIE10
 var famMovie10url = "https://www.omdbapi.com/?apikey=e6c5307a&i=tt12816348";
 OmdbinfoMovie10();
 function OmdbinfoMovie10() {
