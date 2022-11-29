@@ -35,26 +35,15 @@ function fetchSearchedMovie(){
 
 function displaySearchedMovie(data){
 //loop through data results to put title, overview, and poster photo into html 
-// for (var i = 0; i < data.results[0].length; i++) {
-    var getMovieTitle = data.results[i].title;
-    var getDescription = data.results[0].overview;
-    var getMovieImage = image + data.results[0].poster_path;
-    var getMovieRating = data.results[0].vote_average;
-    var getMovieTitle = data.results[0].title;
-    var pushMovieTitle = document.getElementById('searchedMovieTitle');
-    var pushDescription = document.getElementById('searchedMovieOverview');
-    var pushMovieImage = document.getElementById('searchedMoviePic');
-    var pushMovieRating = document.getElementById('searchedMovieRating');
-
-    pushMovieTitle.innerHTML = getMovieTitle;
-    pushMovieTitle.setAttribute('class', 'text-xl');
-    searchedMovies.push(getMovieTitle);
-    console.log(searchedMovies);
-    pushDescription.innerHTML = 'Overview: ' + getDescription;
-    pushMovieImage.src = getMovieImage;
-    pushMovieRating.innerHTML = 'Rating: ' + getMovieRating;
+    var searchedMoviePic = document.getElementById('searchedMoviePic');
+    var searchedMovieTitle = document.getElementById('searchedMovieTitle');
+    var searchedMovieOverview = document.getElementById('searchedMovieOverview');
+    var searchedMovieRating = document.getElementById('searchedMovieRating');
     
-    // }
+    searchedMoviePic.setAttribute('src', image + data.results[0].poster_path);
+    searchedMovieTitle.innerHTML = data.results[0].title;       
+    searchedMovieOverview.innerHTML = 'Overview: ' + data.results[0].overview;
+    searchedMovieRating.innerHTML = 'IMDB Rating: ' + data.results[0].vote_average;
 }
 
 function storeInputs(){

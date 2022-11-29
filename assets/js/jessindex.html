@@ -1,0 +1,148 @@
+<div class="text-center mt-2 text-2xl rounded-sm relative  bg-gray-400">
+    <h1>Boys' Night</h1>
+</div>
+<!--carosuel-->
+
+<section>
+    <div class="flex ">
+        <div class="w-1/12 flex items-center ">
+            <div class="w-full text-right">
+                <button onclick="boysPrev()" class="p-2 rounded-full bg-white border border-gray-100 shadow-lg mr-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="boysSliderContainer" class="w-10/12 overflow-hidden">
+            <ul id="boysSlider" class="flex w-full">
+
+                <!--movie 1-->
+                <li class=" p-3">
+                    <div class="border rounded-lg p-5 h-full">
+                        <img class="rounded-md" src="" id="boymoviepic1" alt="movie1">
+                        <h5 class="mt-2 text-2xl font-medium" id="boymovietitle1"></h5>
+                        <p class="font-light" id="boymovieoverview1"></p>
+                        <p id="boymovierating1">IMDB Rating:</p>
+                    </div>
+                </li>
+
+                <!--movie 2-->
+                <li class=" p-3">
+                    <div class="border rounded-lg p-5 h-full">
+                        <img class="rounded-md" src="" id="boymoviepic2" alt="movie2">
+                        <h5 class=" font-bold mt-2" id="boymovietitle2"></h5>
+                        <p class="font-light" id="boymovieoverview2"></p>
+                        <p id="boymovierating2">IMDB Rating:</p>
+                    </div>
+                </li>
+
+                <!--movie 3-->
+                <li class=" p-3">
+                    <div class="border rounded-lg p-5 h-full">
+                        <img class="rounded-md" src="" id="boymoviepic3" alt="movie3">
+                        <h5 class="mt-2 text-2xl font-medium" id="boymovietitle3"></h5>
+                        <p class="font-light whitespace-pre-line" id="boymovieoverview3"></p>
+                        <p id="boymovierating3">IMDB Rating:</p>
+                    </div>
+
+                </li>
+
+                <!--movie 4-->
+
+                <li class=" p-3">
+                    <div class="border rounded-lg p-5 h-full">
+                        <img class="rounded-md" src="" id="boymoviepic4" alt="movie4">
+                        <h5 class="mt-2 text-2xl font-medium" id="boymovietitle4"></h5>
+                        <p class="font-light" id="boymovieoverview4"></p>
+                        <p id="boymovierating4">IMDB Rating:</p>
+                    </div>
+                </li>
+
+                <!--movie 5-->
+                <li class="p-3 ">
+                    <div class="border rounded-lg p-5 h-full">
+                        <img class="rounded-md" src="" id="boymoviepic5" alt="movie5">
+                        <h5 class="mt-2 text-2xl font-medium" id="boymovietitle5"></h5>
+                        <p class="font-light" id="boymovieoverview5"></p>
+                        <p id="boymovierating5">IMDB Rating:</p>
+                    </div>
+
+                </li>
+
+                <!--movie 6-->
+                <li class=" p-3">
+                    <div class="border rounded-lg p-5 h-full">
+                        <img class="rounded-md" src="" id="boymoviepic6" alt="movie6">
+                        <h5 class="mt-2 text-2xl font-medium" id="boymovietitle6"></h5>
+                        <p class="font-light" id="boymovieoverview6"></p>
+                        <p id="boymovierating6">IMDB Rating:</p>
+                    </div>
+
+                </li>
+
+                <!--movie 7-->
+                <li class=" p-3 ">
+                    <div class="border rounded-lg p-5 h-full">
+                        <img class="rounded-md" src="" id="boymoviepic7" alt="movie7">
+                        <h5 class="mt-2 text-2xl font-medium" id="boymovietitle7"></h5>
+                        <p class="font-light" id="boymovieoverview7"></p>
+                        <p id="boymovierating7">IMDB Rating:</p>
+                    </div>
+
+                </li>
+
+
+                <!--movie 8-->
+                <li class=" p-3">
+                    <div class="border rounded-lg p-5 h-full">
+                        <img class="rounded-md" src="" id="boymoviepic8" alt="movie8">
+                        <h5 class="mt-2 text-2xl font-medium" id="boymovietitle8"></h5>
+                        <p class="font-light" id="boymovieoverview8"></p>
+                        <p id="boymovierating8">IMDB Rating:</p>
+                    </div>
+
+                </li>
+
+
+                <!--movie 9-->
+                <li class=" p-3">
+                    <div class="border rounded-lg p-5 h-full">
+                        <img class="rounded-md" src="" id="boymoviepic9" alt="movie9">
+                        <h5 class="mt-2 text-2xl font-medium" id="boymovietitle9"></h5>
+                        <p class="font-light" id="boymovieoverview9"></p>
+                        <p id="boymovierating9">IMDB Rating:</p>
+                    </div>
+
+                </li>
+
+                <!--movie 10-->
+                <li class=" p-3">
+                    <div class="border rounded-lg p-5 h-full">
+                        <img class="rounded-md" src="" id="boymoviepic10" alt="movie10">
+                        <h5 class="mt-2 text-2xl font-medium" id="boymovietitle10"></h5>
+                        <p class="font-light" id="boymovieoverview10"></p>
+                        <p id="boymovierating10">IMDB Rating:</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--Right arrow-->
+        <div class="w-1/12 flex items-center">
+            <div class="w-full text-left">
+                <button onclick="boysNext()"
+                    class="p-2 rounded-full bg-white border border-gray-100 shadow-lg ml-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                    </svg>
+
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
